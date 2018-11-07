@@ -5,13 +5,6 @@
 //  Created by Арман on 11/4/18.
 //  Copyright © 2018 Арман. All rights reserved.
 //
-
-//8227490faaaa60bb94b7cb2f92eb08a4
-
-//https://api.eljur.ru/api/auth?login=login&password=password&devkey=8227490faaaa60bb94b7cb2f92eb08a4&vendor=hselyceum
-//https://api.eljur.ru/api/getschedule?class=11МИ4&devkey=8227490faaaa60bb94b7cb2f92eb08a4&vendor=hselyceum&rings=yes&out_format=json&auth_token=8a73e91ca03c569cb05cb76d315ddd99de511bac807d1c55a582f___2018
-
-
 import UIKit
 
 class LogInViewController: UIViewController {
@@ -101,8 +94,6 @@ class LogInViewController: UIViewController {
     
     func setupViews() {
         view.addSubview(stackView)
-        
-        
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[v0]-25-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": stackView]))
         topAnchor =  stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100)
         topAnchor?.isActive = true
