@@ -9,14 +9,16 @@
 import Foundation
 
 class Networking {
-    static func logginIn(for url: URL, completion: @escaping (Bool, Any?, Error?) -> Void) {
+    static func Request(for url: URL, _ type: String, completion: @escaping (Bool, Any?, Error?) -> Void) {
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
+        let type = type.uppercased()
+        request.httpMethod = type
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
                     DispatchQueue.main.async {
                         completion(true, json, nil)
                     }
@@ -24,9 +26,10 @@ class Networking {
                     DispatchQueue.main.async {
                         completion(false, nil, error)
                     }
-                    print(error)
                 }
             }
-            }.resume()
+        }.resume()
     }
+    
+    
 }

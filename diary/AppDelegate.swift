@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         if UserDefaults.standard.string(forKey: "token") != nil {
+            token = UserDefaults.standard.string(forKey: "token")!
             let vc = DiaryVC()
             window?.rootViewController = vc
             vc.view.backgroundColor = #colorLiteral(red: 0.1602233052, green: 0.1644028425, blue: 0.1861923337, alpha: 1)

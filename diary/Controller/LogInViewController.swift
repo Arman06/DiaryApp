@@ -19,7 +19,6 @@ class LogInViewController: UIViewController {
     let defaults = UserDefaults.standard
     var login = String()
     var password = String()
-    var token: String?
     var topAnchor: NSLayoutConstraint?
     var topAnchorConstantHolder: CGFloat?
     
@@ -33,20 +32,24 @@ class LogInViewController: UIViewController {
         return label
     }()
     
-    let stackView: UIStackView = {
+    lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
         stack.spacing = 20
+        stack.addArrangedSubview(titleLabel)
+        stack.addArrangedSubview(loginField)
+        stack.addArrangedSubview(passwordField)
+        stack.addArrangedSubview(logInButton)
         return stack
     }()
     
     let loginField: UITextField = {
         let field = UITextField()
         field.translatesAutoresizingMaskIntoConstraints = false
-        field.attributedPlaceholder = NSAttributedString(string: "Login", attributes:
-            [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.8979702592, green: 0.8980781436, blue: 0.8979334831, alpha: 1)])
+        field.attributedPlaceholder = NSAttributedString(string: "Login",
+                                                         attributes:[NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.8979702592, green: 0.8980781436, blue: 0.8979334831, alpha: 1)])
         field.backgroundColor = #colorLiteral(red: 0.3135865331, green: 0.3139150143, blue: 0.3050451577, alpha: 1)
         field.borderStyle = .roundedRect
         field.keyboardType = .default
@@ -57,7 +60,8 @@ class LogInViewController: UIViewController {
     
     let passwordField: UITextField = {
         let field = UITextField()
-        field.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.8979702592, green: 0.8980781436, blue: 0.8979334831, alpha: 1)])
+        field.attributedPlaceholder = NSAttributedString(string: "Password",
+                                                         attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.8979702592, green: 0.8980781436, blue: 0.8979334831, alpha: 1)])
         field.translatesAutoresizingMaskIntoConstraints = false
         field.backgroundColor = #colorLiteral(red: 0.3135865331, green: 0.3139150143, blue: 0.3050451577, alpha: 1)
         field.borderStyle = .roundedRect
@@ -84,7 +88,7 @@ class LogInViewController: UIViewController {
     }
     
     
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         addNotificationObserevers()
@@ -97,10 +101,7 @@ class LogInViewController: UIViewController {
     
     func setupViews() {
         view.addSubview(stackView)
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(loginField)
-        stackView.addArrangedSubview(passwordField)
-        stackView.addArrangedSubview(logInButton)
+        
         
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[v0]-25-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": stackView]))
         topAnchor =  stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100)
@@ -111,10 +112,12 @@ class LogInViewController: UIViewController {
     
     
     
+    
     func addNotificationObserevers() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification: )), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
     
     
     
@@ -132,6 +135,10 @@ class LogInViewController: UIViewController {
             }
         }
     }
+    
+    
+    
+    
     
     @objc func keyboardWillHide(notification: NSNotification) {
         self.topAnchor?.constant = topAnchorConstantHolder!
@@ -155,22 +162,27 @@ class LogInViewController: UIViewController {
     
     @objc func logInButtonTapped(_ sender: UIButton) {
         view.endEditing(true)
-        guard let url = URL(string: "https://api.eljur.ru/api/auth?login=\(login)&password=\(password)&devkey=\(devkey)&vendor=\(vendor)&out_format=json"), login != "", password != "" else {return}
-        Networking.logginIn(for: url) { (success, data, error) in
-            if success {
-                guard let response = data as? [String:Any] else {return}
-                guard let responseArray = response["response"] as? [String:Any] else {return}
-                guard let resultArray = responseArray["result"] as? [String:Any] else {return}
-                guard let tokenAuth = resultArray["token"] as? String else {return}
-                self.token = tokenAuth
-                print(self.token!)
-                self.defaults.set(self.token, forKey: "token")
+        Eljur.logIn(login, password) { (token, error, errorString) in
+            if token != nil {
+                self.defaults.set(token, forKey: "token")
                 self.present(DiaryVC(), animated: true, completion: nil)
+            } else if error != nil {
+                let alert = UIAlertController(title: nil, message: "Ошибка", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Окей", style: .destructive, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+            } else if errorString != nil {
+                let alert = UIAlertController(title: nil, message: errorString, preferredStyle: .alert)
+                let action = UIAlertAction(title: "Окей", style: .destructive, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
 
 }
+
+
 
 extension LogInViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

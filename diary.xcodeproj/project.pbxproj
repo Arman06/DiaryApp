@@ -14,6 +14,9 @@
 		C2B86DF02191D03F00442107 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DEF2191D03F00442107 /* Constant.swift */; };
 		C2B86DF22191E51100442107 /* DiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DF12191E51100442107 /* DiaryVC.swift */; };
 		C2B86DF42191FCF200442107 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DF32191FCF200442107 /* Networking.swift */; };
+		C2B86DFA21931CCD00442107 /* EljurApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DF921931CCD00442107 /* EljurApi.swift */; };
+		C2B86DFC2193330000442107 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DFB2193330000442107 /* Subject.swift */; };
+		C2B86DFE2193331300442107 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DFD2193331300442107 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		C2B86DEF2191D03F00442107 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C2B86DF12191E51100442107 /* DiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryVC.swift; sourceTree = "<group>"; };
 		C2B86DF32191FCF200442107 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		C2B86DF921931CCD00442107 /* EljurApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EljurApi.swift; sourceTree = "<group>"; };
+		C2B86DFB2193330000442107 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		C2B86DFD2193331300442107 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +64,51 @@
 		C2591D44218F3F93004DD216 /* diary */ = {
 			isa = PBXGroup;
 			children = (
+				C2B86DF821931C2D00442107 /* Assistant */,
+				C2B86DF721931C0F00442107 /* Model */,
+				C2B86DF621931C0900442107 /* View */,
+				C2B86DF521931BF200442107 /* Controller */,
 				C2591D45218F3F93004DD216 /* AppDelegate.swift */,
-				C2B86DEF2191D03F00442107 /* Constant.swift */,
-				C2B86DF32191FCF200442107 /* Networking.swift */,
-				C2591D47218F3F93004DD216 /* LogInViewController.swift */,
-				C2B86DF12191E51100442107 /* DiaryVC.swift */,
 				C2591D4C218F3F95004DD216 /* Assets.xcassets */,
 				C2591D4E218F3F95004DD216 /* LaunchScreen.storyboard */,
 				C2591D51218F3F95004DD216 /* Info.plist */,
 			);
 			path = diary;
+			sourceTree = "<group>";
+		};
+		C2B86DF521931BF200442107 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C2591D47218F3F93004DD216 /* LogInViewController.swift */,
+				C2B86DF12191E51100442107 /* DiaryVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C2B86DF621931C0900442107 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C2B86DF721931C0F00442107 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C2B86DF32191FCF200442107 /* Networking.swift */,
+				C2B86DF921931CCD00442107 /* EljurApi.swift */,
+				C2B86DFB2193330000442107 /* Subject.swift */,
+				C2B86DFD2193331300442107 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C2B86DF821931C2D00442107 /* Assistant */ = {
+			isa = PBXGroup;
+			children = (
+				C2B86DEF2191D03F00442107 /* Constant.swift */,
+			);
+			path = Assistant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +183,12 @@
 			files = (
 				C2591D48218F3F93004DD216 /* LogInViewController.swift in Sources */,
 				C2B86DF42191FCF200442107 /* Networking.swift in Sources */,
+				C2B86DFC2193330000442107 /* Subject.swift in Sources */,
 				C2591D46218F3F93004DD216 /* AppDelegate.swift in Sources */,
+				C2B86DFE2193331300442107 /* User.swift in Sources */,
 				C2B86DF22191E51100442107 /* DiaryVC.swift in Sources */,
 				C2B86DF02191D03F00442107 /* Constant.swift in Sources */,
+				C2B86DFA21931CCD00442107 /* EljurApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
