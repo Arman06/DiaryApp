@@ -8,6 +8,11 @@
 
 import Foundation
 
-class Subject {
-    
+struct Subject: Codable {
+    var name: String
+    var teacher: String
+    init(name: String, teacher: String) {
+        self.name = name
+        self.teacher = teacher
+    }
 }

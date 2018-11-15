@@ -17,6 +17,7 @@
 		C2B86DFA21931CCD00442107 /* EljurApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DF921931CCD00442107 /* EljurApi.swift */; };
 		C2B86DFC2193330000442107 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DFB2193330000442107 /* Subject.swift */; };
 		C2B86DFE2193331300442107 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DFD2193331300442107 /* User.swift */; };
+		C2F4898E219C7DC900C72361 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F4898D219C7DC900C72361 /* JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C2B86DF921931CCD00442107 /* EljurApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EljurApi.swift; sourceTree = "<group>"; };
 		C2B86DFB2193330000442107 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		C2B86DFD2193331300442107 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C2F4898D219C7DC900C72361 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		C2B86DF721931C0F00442107 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C2F4898D219C7DC900C72361 /* JSON.swift */,
 				C2B86DF32191FCF200442107 /* Networking.swift */,
 				C2B86DF921931CCD00442107 /* EljurApi.swift */,
 				C2B86DFB2193330000442107 /* Subject.swift */,
@@ -184,6 +187,7 @@
 				C2591D48218F3F93004DD216 /* LogInViewController.swift in Sources */,
 				C2B86DF42191FCF200442107 /* Networking.swift in Sources */,
 				C2B86DFC2193330000442107 /* Subject.swift in Sources */,
+				C2F4898E219C7DC900C72361 /* JSON.swift in Sources */,
 				C2591D46218F3F93004DD216 /* AppDelegate.swift in Sources */,
 				C2B86DFE2193331300442107 /* User.swift in Sources */,
 				C2B86DF22191E51100442107 /* DiaryVC.swift in Sources */,

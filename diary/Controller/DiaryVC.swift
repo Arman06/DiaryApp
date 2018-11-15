@@ -10,8 +10,10 @@ import UIKit
 
 class DiaryVC: UIViewController {
     
-    var data = [[String:Any]]()
+    var data = [SuperJSON]()
     var dataKeys: [String]?
+    var subjects = [String:[Subject]]()
+    var days = [String]()
     
     let button: UIButton = {
         let button = UIButton()
@@ -55,8 +57,16 @@ class DiaryVC: UIViewController {
         Eljur.getSchedule { (daysArray, error) in
             if let array = daysArray {
                 self.data.append(array)
-                self.dataKeys =  self.data[0].keys.sorted(by: >)
-                self.tableView.reloadData()
+                self.dataKeys =  self.data[0].dictionaryAny?.keys.sorted(by: >)
+                for key in self.dataKeys! {
+                    self.subjects[key] = [Subject]()
+                    let dataForLoop = self.data[0][key]!["items"]!
+                    for index in 0...dataForLoop.count! - 1 {
+                        self.subjects[key]?.append(Subject(name: dataForLoop[index]!["name"]!.string!, teacher: dataForLoop[index]!["teacher"]!.string!))
+                    }
+                }
+                self.days = self.subjects.keys.sorted(by: <)
+                self.tableView.reloadData() 
             }
         }
     }
@@ -64,26 +74,26 @@ class DiaryVC: UIViewController {
 }
 
 extension DiaryVC: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataKeys?.count ?? 0
+        return subjects[days[section]]!.count
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return days.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = days[section]
+        label.backgroundColor = UIColor.lightGray
+        return label
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "id", for: indexPath)
         cell.backgroundColor = #colorLiteral(red: 0.1602233052, green: 0.1644028425, blue: 0.1861923337, alpha: 1)
-        cell.textLabel?.text = "\(dataKeys?[indexPath.row] ?? "none")"
+        cell.textLabel?.text = "\(subjects[days[indexPath.section]]![indexPath.row].name)"
         cell.textLabel?.textColor = UIColor.white
-
-        guard let titleData = data[0][(dataKeys?[indexPath.row])!] as? [String:Any] else {return cell}
-        guard let titleString = titleData["title"] else {return cell}
-        cell.textLabel?.text = titleString as? String
-//        guard let items = titleData["items"] as? [Any] else {return cell}
-//        guard let item = items[indexPath.row] as? [String:Any] else {return cell}
-//        guard let name = item["name"] as? String else {return cell}
-//        print(name)
-//        cell.textLabel?.text = name
-//        cell.textLabel?.textColor = UIColor.white
-//        print(items)
         return cell
     }
     
