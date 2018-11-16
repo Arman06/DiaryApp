@@ -30,6 +30,7 @@ class DiaryVC: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorInset = UIEdgeInsets.zero
         tableView.backgroundColor = #colorLiteral(red: 0.1602233052, green: 0.1644028425, blue: 0.1861923337, alpha: 1)
+        tableView.allowsSelection = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "id")
         return tableView
     }()

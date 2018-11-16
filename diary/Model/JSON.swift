@@ -14,18 +14,16 @@ struct SuperJSON {
     var count: Int? {
         switch type {
         case .array:
-            guard let arrayFromData:[Any] = nedeedData() else {return nil}
-            return arrayFromData.count
+            return (neededData()! as [Any]).count
         case .single:
             return nil
         }
     }
     
-    
     private var type: SuperJSONType = .single
     
     private func checkType() -> SuperJSONType {
-        guard let _:[Any] = nedeedData() else {return .single}
+        guard let _:[Any] = neededData() else {return .single}
         return .array
     }
     
@@ -33,14 +31,14 @@ struct SuperJSON {
         guard let stringFromData = data as? String else {return nil}
         return stringFromData
     }
-
-    func nedeedData<T>() -> T? {
+    
+    private func neededData<T>() -> T? {
         guard let arrayFromData = data as? T else {return nil}
         return arrayFromData
     }
     
     var arrayJSON: [SuperJSON]? {
-        guard let arrayFromData:[Any] = nedeedData() else {return nil}
+        guard let arrayFromData:[Any] = neededData() else {return nil}
         var jsonArray = [SuperJSON]()
         for index in arrayFromData.indices {
             jsonArray.append(SuperJSON(data: arrayFromData[index]))
@@ -49,12 +47,12 @@ struct SuperJSON {
     }
     
     var array: [Any]? {
-        guard let arrayFromData:[Any] = nedeedData() else {return nil}
+        guard let arrayFromData:[Any] = neededData() else {return nil}
         return arrayFromData
     }
     
     var dictionaryJSON: [String:SuperJSON]? {
-        guard let arrayFromData:[String:Any] = nedeedData() else {return nil}
+        guard let arrayFromData:[String:Any] = neededData() else {return nil}
         var jsonArray = [String:SuperJSON]()
         for key in arrayFromData.keys {
             jsonArray[key] = (SuperJSON(data: arrayFromData[key]!))
@@ -63,7 +61,7 @@ struct SuperJSON {
     }
     
     var dictionaryAny: [String:Any]? {
-        guard let arrayFromData:[String:Any] = nedeedData() else {return nil}
+        guard let arrayFromData:[String:Any] = neededData() else {return nil}
         var jsonArray = [String:Any]()
         for key in arrayFromData.keys {
             jsonArray[key] = arrayFromData[key]
@@ -80,7 +78,7 @@ struct SuperJSON {
     }
     
     subscript(index: Int) -> SuperJSON? {
-        guard let arrayFromData:[Any] = nedeedData() else {return nil}
+        guard let arrayFromData:[Any] = neededData() else {return nil}
         return SuperJSON(data: arrayFromData[index])
     }
     
