@@ -74,7 +74,7 @@ struct SuperJSON {
     
     subscript(index: String) -> SuperJSON? {
         guard let sendData = data as? [String:Any] else {return nil}
-        return SuperJSON(data: sendData[index]!)
+        return SuperJSON(data: sendData[index] as Any)
     }
     
     subscript(index: Int) -> SuperJSON? {
@@ -84,24 +84,24 @@ struct SuperJSON {
     
     init(data dataObj: Data, options opt: JSONSerialization.ReadingOptions = []) throws {
         let object: Any = try JSONSerialization.jsonObject(with: dataObj, options: opt)
-        self.init(jsonData: object)
+        self.init(readyData: object)
     }
     
     init(_ data: Any) {
         guard let initData = data as? Data else {
-            self.init(jsonData: nil)
+            self.init(readyData: nil)
             return
         }
         do {
             try self.init(data: initData)
         } catch {
             print(error)
-            self.init(jsonData: nil)
+            self.init(readyData: nil)
         }
     }
     
-    private init(jsonData: Any?) {
-        self.data = jsonData
+    private init(readyData: Any?) {
+        self.data = readyData
         self.type = checkType()
     }
     
@@ -135,3 +135,5 @@ extension SuperJSON: CustomStringConvertible {
     }
     
 }
+
+

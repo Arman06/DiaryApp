@@ -19,13 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         if UserDefaults.standard.string(forKey: "token") != nil {
             token = UserDefaults.standard.string(forKey: "token")!
-            let vc = DiaryVC()
+            let vc = RootTabBarController()
             window?.rootViewController = vc
-            vc.view.backgroundColor = #colorLiteral(red: 0.1602233052, green: 0.1644028425, blue: 0.1861923337, alpha: 1)
         } else {
             let vc = LogInViewController()
             window?.rootViewController = vc
-            vc.view.backgroundColor = #colorLiteral(red: 0.1602233052, green: 0.1644028425, blue: 0.1861923337, alpha: 1)
         }
         window?.makeKeyAndVisible()
         return true

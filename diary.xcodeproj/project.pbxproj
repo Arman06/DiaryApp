@@ -12,12 +12,18 @@
 		C2591D4D218F3F95004DD216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2591D4C218F3F95004DD216 /* Assets.xcassets */; };
 		C2591D50218F3F95004DD216 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2591D4E218F3F95004DD216 /* LaunchScreen.storyboard */; };
 		C2B86DF02191D03F00442107 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DEF2191D03F00442107 /* Constant.swift */; };
-		C2B86DF22191E51100442107 /* DiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DF12191E51100442107 /* DiaryVC.swift */; };
+		C2B86DF22191E51100442107 /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DF12191E51100442107 /* ScheduleVC.swift */; };
 		C2B86DF42191FCF200442107 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DF32191FCF200442107 /* Networking.swift */; };
 		C2B86DFA21931CCD00442107 /* EljurApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DF921931CCD00442107 /* EljurApi.swift */; };
 		C2B86DFC2193330000442107 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DFB2193330000442107 /* Subject.swift */; };
 		C2B86DFE2193331300442107 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B86DFD2193331300442107 /* User.swift */; };
 		C2F4898E219C7DC900C72361 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F4898D219C7DC900C72361 /* JSON.swift */; };
+		C2F7C09621A02FD100CB1C8B /* SubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7C09521A02FD100CB1C8B /* SubjectCell.swift */; };
+		C2F7C09821A087AC00CB1C8B /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7C09721A087AC00CB1C8B /* CustomLabel.swift */; };
+		C2F7C09A21A09B0600CB1C8B /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7C09921A09B0600CB1C8B /* RootTabBarController.swift */; };
+		C2F7C09C21A0A01100CB1C8B /* DiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7C09B21A0A01100CB1C8B /* DiaryVC.swift */; };
+		C2F7C09E21A0A02700CB1C8B /* GradesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7C09D21A0A02700CB1C8B /* GradesVC.swift */; };
+		C2F7C0A021A0A2C100CB1C8B /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7C09F21A0A2C100CB1C8B /* CustomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +34,18 @@
 		C2591D4F218F3F95004DD216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2591D51218F3F95004DD216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2B86DEF2191D03F00442107 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		C2B86DF12191E51100442107 /* DiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryVC.swift; sourceTree = "<group>"; };
+		C2B86DF12191E51100442107 /* ScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
 		C2B86DF32191FCF200442107 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		C2B86DF921931CCD00442107 /* EljurApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EljurApi.swift; sourceTree = "<group>"; };
 		C2B86DFB2193330000442107 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		C2B86DFD2193331300442107 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C2F4898D219C7DC900C72361 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		C2F7C09521A02FD100CB1C8B /* SubjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCell.swift; sourceTree = "<group>"; };
+		C2F7C09721A087AC00CB1C8B /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		C2F7C09921A09B0600CB1C8B /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		C2F7C09B21A0A01100CB1C8B /* DiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryVC.swift; sourceTree = "<group>"; };
+		C2F7C09D21A0A02700CB1C8B /* GradesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesVC.swift; sourceTree = "<group>"; };
+		C2F7C09F21A0A2C100CB1C8B /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				C2591D47218F3F93004DD216 /* LogInViewController.swift */,
-				C2B86DF12191E51100442107 /* DiaryVC.swift */,
+				C2F7C09921A09B0600CB1C8B /* RootTabBarController.swift */,
+				C2B86DF12191E51100442107 /* ScheduleVC.swift */,
+				C2F7C09B21A0A01100CB1C8B /* DiaryVC.swift */,
+				C2F7C09D21A0A02700CB1C8B /* GradesVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -90,6 +105,9 @@
 		C2B86DF621931C0900442107 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C2F7C09721A087AC00CB1C8B /* CustomLabel.swift */,
+				C2F7C09F21A0A2C100CB1C8B /* CustomViewController.swift */,
+				C2F7C09521A02FD100CB1C8B /* SubjectCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,12 +203,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2591D48218F3F93004DD216 /* LogInViewController.swift in Sources */,
+				C2F7C09C21A0A01100CB1C8B /* DiaryVC.swift in Sources */,
+				C2F7C09A21A09B0600CB1C8B /* RootTabBarController.swift in Sources */,
 				C2B86DF42191FCF200442107 /* Networking.swift in Sources */,
+				C2F7C09821A087AC00CB1C8B /* CustomLabel.swift in Sources */,
 				C2B86DFC2193330000442107 /* Subject.swift in Sources */,
 				C2F4898E219C7DC900C72361 /* JSON.swift in Sources */,
+				C2F7C09621A02FD100CB1C8B /* SubjectCell.swift in Sources */,
+				C2F7C09E21A0A02700CB1C8B /* GradesVC.swift in Sources */,
 				C2591D46218F3F93004DD216 /* AppDelegate.swift in Sources */,
 				C2B86DFE2193331300442107 /* User.swift in Sources */,
-				C2B86DF22191E51100442107 /* DiaryVC.swift in Sources */,
+				C2B86DF22191E51100442107 /* ScheduleVC.swift in Sources */,
+				C2F7C0A021A0A2C100CB1C8B /* CustomViewController.swift in Sources */,
 				C2B86DF02191D03F00442107 /* Constant.swift in Sources */,
 				C2B86DFA21931CCD00442107 /* EljurApi.swift in Sources */,
 			);

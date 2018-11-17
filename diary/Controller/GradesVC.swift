@@ -1,5 +1,5 @@
 //
-//  DiaryVC.swift
+//  GradesVC.swift
 //  diary
 //
 //  Created by Арман on 11/17/18.
@@ -8,13 +8,14 @@
 
 import UIKit
 
-class DiaryVC: UICustomViewController {
+
+class GradesVC: UICustomViewController {
     
     
     let label: UILabel = {
         let label = UILabel()
-        label.text = "Hello Diary"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Hello Grades"
         label.textColor = UIColor.white
         return label
     }()
@@ -29,4 +30,5 @@ class DiaryVC: UICustomViewController {
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
+    
 }

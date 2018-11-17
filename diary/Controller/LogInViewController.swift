@@ -19,7 +19,7 @@ class LogInViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         let attributedString = NSMutableAttributedString(string: "Log In", attributes: [NSAttributedString.Key.font : UIFont(name: "Avenir", size: 35)!])
-        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: 3))
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: textThemeColor, range: NSRange(location: 0, length: 3))
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: #colorLiteral(red: 1, green: 0.3513356447, blue: 0.3235116899, alpha: 1) , range: NSRange(location: 4, length: 2))
         label.attributedText = attributedString
         return label
@@ -156,7 +156,7 @@ class LogInViewController: UIViewController {
         Eljur.logIn(login, password) { (token, error, errorString) in
             if token != nil {
                 self.defaults.set(token, forKey: "token")
-                self.present(DiaryVC(), animated: true, completion: nil)
+                self.present(RootTabBarController(), animated: true, completion: nil)
             } else if error != nil {
                 let alert = UIAlertController(title: nil, message: "Ошибка", preferredStyle: .alert)
                 let action = UIAlertAction(title: "Окей", style: .destructive, handler: nil)

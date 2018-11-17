@@ -6,8 +6,9 @@
 //  Copyright © 2018 Арман. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 let devkey = "8227490faaaa60bb94b7cb2f92eb08a4"
 let vendor = "hselyceum"
 var token: String?
+var textThemeColor = UIColor.white
