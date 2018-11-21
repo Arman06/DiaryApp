@@ -17,8 +17,6 @@ class Networking {
         session.dataTask(with: request) { (data, response, error) in
             if let data = data {
                 do {
-//                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-//                    let json = JSON(data: data)
                     let json = try SuperJSON(data: data)
                     
                     DispatchQueue.main.async {

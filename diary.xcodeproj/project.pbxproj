@@ -24,6 +24,8 @@
 		C2F7C09C21A0A01100CB1C8B /* DiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7C09B21A0A01100CB1C8B /* DiaryVC.swift */; };
 		C2F7C09E21A0A02700CB1C8B /* GradesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7C09D21A0A02700CB1C8B /* GradesVC.swift */; };
 		C2F7C0A021A0A2C100CB1C8B /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7C09F21A0A2C100CB1C8B /* CustomViewController.swift */; };
+		C2F7C0A221A15E4900CB1C8B /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7C0A121A15E4900CB1C8B /* MessagesVC.swift */; };
+		C2F7C0A421A15E9800CB1C8B /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7C0A321A15E9800CB1C8B /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		C2F7C09B21A0A01100CB1C8B /* DiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryVC.swift; sourceTree = "<group>"; };
 		C2F7C09D21A0A02700CB1C8B /* GradesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesVC.swift; sourceTree = "<group>"; };
 		C2F7C09F21A0A2C100CB1C8B /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		C2F7C0A121A15E4900CB1C8B /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
+		C2F7C0A321A15E9800CB1C8B /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 				C2591D47218F3F93004DD216 /* LogInViewController.swift */,
 				C2F7C09921A09B0600CB1C8B /* RootTabBarController.swift */,
 				C2B86DF12191E51100442107 /* ScheduleVC.swift */,
+				C2F7C0A121A15E4900CB1C8B /* MessagesVC.swift */,
+				C2F7C0A321A15E9800CB1C8B /* SettingsVC.swift */,
 				C2F7C09B21A0A01100CB1C8B /* DiaryVC.swift */,
 				C2F7C09D21A0A02700CB1C8B /* GradesVC.swift */,
 			);
@@ -202,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2F7C0A421A15E9800CB1C8B /* SettingsVC.swift in Sources */,
 				C2591D48218F3F93004DD216 /* LogInViewController.swift in Sources */,
 				C2F7C09C21A0A01100CB1C8B /* DiaryVC.swift in Sources */,
 				C2F7C09A21A09B0600CB1C8B /* RootTabBarController.swift in Sources */,
@@ -214,6 +221,7 @@
 				C2591D46218F3F93004DD216 /* AppDelegate.swift in Sources */,
 				C2B86DFE2193331300442107 /* User.swift in Sources */,
 				C2B86DF22191E51100442107 /* ScheduleVC.swift in Sources */,
+				C2F7C0A221A15E4900CB1C8B /* MessagesVC.swift in Sources */,
 				C2F7C0A021A0A2C100CB1C8B /* CustomViewController.swift in Sources */,
 				C2B86DF02191D03F00442107 /* Constant.swift in Sources */,
 				C2B86DFA21931CCD00442107 /* EljurApi.swift in Sources */,
