@@ -22,7 +22,6 @@ class ScheduleVC: UICustomViewController {
         button.setTitle("Load", for: .normal)
         button.backgroundColor = UIColor.red
         button.layer.cornerRadius = 5
-//        button.addTarget(self, action: #selector(loadButtonTapped(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -46,9 +45,6 @@ class ScheduleVC: UICustomViewController {
         collectionView.backgroundColor = #colorLiteral(red: 0.1602233052, green: 0.1644028425, blue: 0.1861923337, alpha: 1)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(SubjectCell.self, forCellWithReuseIdentifier: "subj")
-        
-        
-//        collectionView.setCollectionViewLayout(flowLayout, animated: true)
         return collectionView
     }()
     
@@ -67,11 +63,6 @@ class ScheduleVC: UICustomViewController {
         indicator.color = UIColor.red
         return indicator
     }()
-    
-    
-//    let group = DispatchGroup()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,19 +144,12 @@ class ScheduleVC: UICustomViewController {
         
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutConstraint.FormatOptions(),metrics: nil, views: ["v0": collectionView]))
         
-//        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-25-[v0]-25-|", options: NSLayoutConstraint.FormatOptions(),
-//                                                           metrics: nil, views: ["v0": button]))
-        
-//        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-70-[v1]|", options: NSLayoutConstraint.FormatOptions(),
-//                                                           metrics: nil, views: ["v0": button, "v1" : tableView]))
-        
+
         collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
-//    @objc func loadButtonTapped(_ sender: UIButton) {
-//        getSchedule(completion: nil)
-//    }
+
     
 }
 
@@ -187,51 +171,15 @@ extension ScheduleVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "subj", for: indexPath) as! SubjectCell
         cell.backgroundColor = #colorLiteral(red: 0.1785729825, green: 0.1843303144, blue: 0.2109975219, alpha: 1)
         let subject = subjects[days[indexPath.section]]![indexPath.row]
-//        let text = subject.num + ". " + subject.name + "\n" + subject.room + "\n" + subject.teacher + "\n" + subject.start + " -> " + subject.end
         cell.name.text = subject.name
         cell.teacher.text = subject.teacher
         cell.startTime.text = subject.start
         cell.endTime.text = subject.end
         cell.time.text = subject.start + " -> " + subject.end
-        
         cell.room.text = subject.room == "" ? "none" : subject.room
         cell.group.text = subject.group
-//                cell.textLabel?.numberOfLines = 0
-//                cell.textLabel?.textColor = UIColor.white
             return cell
     }
-    
-    
-    
-    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return subjects[days[section]]!.count
-//    }
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return days.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let label = UILabel()
-//        label.text = days[section]
-//        label.textColor = UIColor.black
-//        label.backgroundColor = UIColor.white
-//        return label
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "id", for: indexPath) as! SubjectCell
-//        cell.backgroundColor = #colorLiteral(red: 0.1602233052, green: 0.1644028425, blue: 0.1861923337, alpha: 1)
-//        let subject = subjects[days[indexPath.section]]![indexPath.row]
-//        let text = subject.num + ". " + subject.name + "\n" + subject.room + "\n" + subject.teacher + "\n" + subject.start + " -> " + subject.end
-//        cell.textLabel?.text = text
-//        cell.detailTextLabel?.text = subject.group
-//        cell.detailTextLabel?.textColor = UIColor.white
-//        cell.textLabel?.numberOfLines = 0
-//        cell.textLabel?.textColor = UIColor.white
-//        return cell
-//    }
-    
     
     
 }
